@@ -1,0 +1,212 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #333;
+  color: white;
+  overflow: hidden;
+}
+
+.game-container {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#road {
+  /* width: 430px; */
+  height: 500px;
+  background-image: url(infiniteRoad.png);
+  /* background: repeating-linear-gradient(
+    to bottom,
+    #555,
+    #555 40px,
+    #222 40px,
+    #222 80px
+  ); */
+  overflow: hidden;
+  position: relative;
+  animation: scroll-road 1s linear infinite;
+}
+
+@keyframes scroll-road {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 80px;
+  }
+}
+
+#prompt {
+  position: fixed;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(21, 21, 21, 0.847); /* Black with transparency */
+  color: white;
+  width: 300px; /* Full width */
+  /* padding: 20px 40px; */
+  padding-top: 0;
+  border-radius: 0 0 15px 15px; /* Rounded edges */
+  z-index: 1000; /* Ensures it's on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for a subtle 3D effect */
+  text-align: center;
+  z-index: 2;
+}
+
+#car { 
+  /* background: url(car1.png); */
+  width: 50px;
+  /* height: 30px; */
+  object-fit: cover;
+  /* background: red; */
+  position: absolute;
+  bottom: 20px;
+  left: 125px;
+  transition: left 0.5s ease;
+}
+
+.bubble {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: rgba(97, 89, 23, 0.605);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:50px;
+  /* animation: bubble-fall 4s linear; */
+  /* z-index: 100; */
+}
+
+/* @keyframes bubble-fall {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 390%;
+  }
+} */
+
+/* #bubble-1 {
+  left: 20px;
+  animation: bubble-fall 4s linear;
+}
+
+#bubble-2 {
+  left: 185px;
+} */
+
+#bubble-1 {
+  left: 25px;
+  top: 100px;
+}
+
+#bubble-2 {
+  left: 175px;
+  top: 100px;
+}
+
+.status {
+  margin: 10px 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#statusHeader {
+  padding: 0;
+  padding-right: 25px;
+  padding-left: 25px;
+  background-color: #171515ef;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #666;
+}
+
+#correct-message {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #28a74643;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: none;
+}
+
+
+#start-message {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #284ea743;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: none;
+}
+
+#wrong-message {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a7502843;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: none;
+}
+
+
+#game-over-message {
+  position: absolute;
+  width: 200px;
+  top: 250%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a79a2843;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#start-btn{
+  display: none;
+}
